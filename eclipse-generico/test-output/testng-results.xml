@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="401064" started-at="2020-01-20T15:59:15 CLST" finished-at="2020-01-20T16:05:56 CLST">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Core.Cucumber.Runner@527e5409]" name="runScenario" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test name="Default test" duration-ms="401064" started-at="2020-01-20T15:59:15 CLST" finished-at="2020-01-20T16:05:56 CLST">
+      <class name="Core.Cucumber.Runner">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Core.Cucumber.Runner@527e5409]" name="setUp" is-config="true" duration-ms="172" started-at="2020-01-20T15:59:15 CLST" finished-at="2020-01-20T15:59:15 CLST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:Core.Cucumber.Runner@527e5409]" name="setUpClass" is-config="true" duration-ms="250" started-at="2020-01-20T15:59:15 CLST" finished-at="2020-01-20T15:59:15 CLST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Core.Cucumber.Runner@527e5409]" name="runScenario" duration-ms="400278" started-at="2020-01-20T15:59:15 CLST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-01-20T16:05:55 CLST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Abrir Pagina Inicial de Claro"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:Core.Cucumber.Runner@527e5409]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-01-20T16:05:55 CLST" finished-at="2020-01-20T16:05:55 CLST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=runScenario status=SUCCESS method=AbstractTestNGCucumberTests.runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Core.Cucumber.Runner@527e5409] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:Core.Cucumber.Runner@527e5409]" name="tearDownClass" is-config="true" duration-ms="238" started-at="2020-01-20T16:05:56 CLST" finished-at="2020-01-20T16:05:56 CLST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+        <test-method status="PASS" signature="takeScreenshot()[pri:0, instance:Core.Cucumber.Runner@527e5409]" name="takeScreenshot" is-config="true" duration-ms="0" started-at="2020-01-20T16:05:56 CLST" finished-at="2020-01-20T16:05:56 CLST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method status="PASS" signature="generateHTMLReports()[pri:0, instance:Core.Cucumber.Runner@527e5409]" name="generateHTMLReports" is-config="true" duration-ms="5168" started-at="2020-01-20T16:05:56 CLST" finished-at="2020-01-20T16:06:01 CLST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generateHTMLReports -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:Core.Cucumber.Runner@527e5409]" name="quit" is-config="true" duration-ms="0" started-at="2020-01-20T16:06:01 CLST" finished-at="2020-01-20T16:06:01 CLST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- Core.Cucumber.Runner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

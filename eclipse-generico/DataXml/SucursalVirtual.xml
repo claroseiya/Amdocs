@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Pasos>
+	<Ventana Name="Pagina Principal">	   
+		<paso name="BtnAutogestion" by="Xpath" Path="//*[@id='content']/div[2]/header/div[3]/div/nav/ul[2]/li[2]/a" descripcion="Mi claro autogestion"></paso>		
+		<paso name="InpRut"         by="Id" Path="rut" descripcion=""></paso>		
+		<paso name="InpPass"        by="Id" Path="password" descripcion=""></paso>	
+		<paso name="BtnIngreso"     by="Id" Path="logear" descripcion=""></paso>	
+	</Ventana>		
+	<Ventana Name="Ingreso">	   
+		<paso name="TxtBienvenida" by="Xpath" Path="/html/body/main/div[2]/h1" descripcion="Texto de bienvenida"></paso>		
+		<paso name="MnConsumos"    by="Xpath" Path="/html/body/header/div[2]/div/nav/ul/li[3]/a" descripcion="Menu Consumos"></paso>
+	</Ventana>	
+</Pasos>
