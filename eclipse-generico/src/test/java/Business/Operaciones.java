@@ -1724,7 +1724,7 @@ public class Operaciones extends Amdocs{
     }
     
     
-    public void AgregarServicio(String Servicio) throws FindFailed, IOException{
+	public void AgregarServicio(String Servicio) throws FindFailed, IOException{
     	
     	AutoIt.IniciarAutoIt();
 		Au= AutoIt.getAutoit();
@@ -1762,6 +1762,57 @@ public class Operaciones extends Amdocs{
     		}
     	} 
     	
+    	else if(Servicio.contains("Roaming-"))
+		{
+    		System.out.println("/.. equals(\"Roaming-y mas\" ..");
+    		sikuli.ClickImg("PaginaConfiguracion\\subRoaming", 10);
+			sikuli.ClickImg("PaginaConfiguracion\\Agregar", 10);
+			
+			TimeSleep(2000);
+    		sikuli.DobleClickImg("PaginaConfiguracion\\subRoamingSelec", 10);
+    		
+    		String PlanRoa = Servicio.substring(Servicio.indexOf("-") +1, Servicio.length());
+		    System.out.println("/..Plan Roaming: "+ PlanRoa);
+
+		    if(PlanRoa.contains(" MB ")) 
+    		{
+    			System.out.println("/..ROA Datos ..");
+    			sikuli.ClickImg("PaginaConfiguracion\\RoamingDeDatosGris", 10);
+    			TimeSleep(2000);
+    			sikuli.DobleClickImg("PaginaConfiguracion\\RoamingDeDatosGris", 10);
+    		}
+			if(PlanRoa.contains(" SMS ")) 
+    		{
+    			System.out.println("/..ROA SMS ..");
+    			TimeSleep(2000);
+    			sikuli.DobleClickImg("PaginaConfiguracion\\RoamingSMSGris", 10);
+    			
+    		}
+    		if(PlanRoa.contains(" Min ")) 
+    		{
+    			System.out.println("/.. ROA Voz ..");
+    			TimeSleep(2000);
+    			sikuli.DobleClickImg("PaginaConfiguracion\\RoamingDeVozGris", 10);
+    		}
+    		
+    		TimeSleep(2000);
+    		boolean existe = FindArrowDownText(PlanRoa);
+			if(existe)
+				sikuli.ClickImg("PaginaConfiguracion\\Agregar", 10);	
+
+		}
+    	else if(Servicio.equals("Roaming LTE"))
+		{
+    		System.out.println("/.. ROA RoamingLTE ..");
+    		sikuli.ClickImg("PaginaConfiguracion\\subRoaming", 10);
+			sikuli.ClickImg("PaginaConfiguracion\\Agregar", 10);
+			
+			TimeSleep(2000);
+    		sikuli.ClickImg("PaginaConfiguracion\\subRoamingSelec", 10);
+    		sikuli.ClickImg("PaginaConfiguracion\\RoamingLTE", 10);
+			sikuli.ClickImg("PaginaConfiguracion\\Agregar", 10);
+		}
+    	
     	else if(Servicio.equals("Roaming"))
 		{
     		System.out.println("/.. equals(\"Roaming\" ..");
@@ -1778,20 +1829,19 @@ public class Operaciones extends Amdocs{
 				sikuli.ClickImg("PaginaConfiguracion\\Agregar", 10);
     	}
     	
-    	else if(Servicio.contains("Roaming"))
-    	{
-    		
-
-    		sikuli.ClickImg("PaginaConfiguracion\\subRoaming", 10);
-			sikuli.ClickImg("PaginaConfiguracion\\Agregar", 10);
-			
-			TimeSleep(5000);
-			
-			sikuli.DobleClickImg("Servicios\\BolsasAdicionalesRoaming", 10);
-			boolean existe = FindArrowDownText(Servicio);
-			if(existe)
-				sikuli.ClickImg("PaginaConfiguracion\\Agregar", 10);
-    	}
+//    	else if(Servicio.contains("Roaming"))
+//    	{
+//    		
+//    		sikuli.ClickImg("PaginaConfiguracion\\subRoaming", 10);
+//			sikuli.ClickImg("PaginaConfiguracion\\Agregar", 10);
+//			
+//			TimeSleep(5000);
+//			
+//			sikuli.DobleClickImg("Servicios\\BolsasAdicionalesRoaming", 10);
+//			boolean existe = FindArrowDownText(Servicio);
+//			if(existe)
+//				sikuli.ClickImg("PaginaConfiguracion\\Agregar", 10);
+//    	}
     		
     	else if(Servicio.equals("LDI"))
 		{
@@ -2892,5 +2942,18 @@ public class Operaciones extends Amdocs{
 		   SoapAmdocs soap = new SoapAmdocs();
 		  soap.TraspasoTitularidad(Data, Ambiente, CBPOriginal, CBP);
 	   }
+
+	   public void ValidaCiclo() throws IOException, SQLException, FindFailed, UnsupportedFlavorException{
+		   
+		sikuli.ClickTextRigth("Header\\PerfilFacturacionCliente", 3);
+		sikuli.FindImg("CrearContacto\\RetenerFactura", 15); 
+		String CicloFact =sikuli.GetTextDown("Ciclos\\CicloFacturacion",3);
+	  
+		
+		int indice = CicloFact.indexOf("-");;
+		String Ciclo = CicloFact.substring(0, indice);
+		System.out.println(Ciclo);
+		DataRowExcel("Ciclo", Ciclo);
+	}
 	   
 }
