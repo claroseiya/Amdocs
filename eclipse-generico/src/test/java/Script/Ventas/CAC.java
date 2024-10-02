@@ -58,6 +58,7 @@ public class CAC {
 		Oper.ventanaSolicitudEquipo(false,false);
 		//Oper.paginaPrincipalInteraccion(Orden);
 		Oper.BuscarEstadoOrden("Orden");
+		Oper.ValidaCiclo();
 	   
 	}
 	
